@@ -15,6 +15,7 @@ class BookForm(forms.ModelForm):
         fields = ('author', 'title')
 
 BookFormSet = inlineformset_factory(Author, Book, extra=0, min_num=1,
+    can_delete = False,
     fields = ('title','release_date' ),
     widgets = { 'release_date' : DateTimePicker(options={"format": "YYYY-MM-DD",
                                        "pickTime": False})} )
