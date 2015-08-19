@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.models import inlineformset_factory
 from .models import Author, Book
-
+from bootstrap3_datetime.widgets import DateTimePicker
 
 class AuthorForm(forms.ModelForm):
     class Meta:
@@ -14,4 +14,7 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = ('author', 'title')
 
-BookFormSet = inlineformset_factory(Author, Book, extra=0, min_num=1, fields=('title','release_date' ))
+BookFormSet = inlineformset_factory(Author, Book, extra=0, min_num=1,
+    fields = ('title','release_date' ),
+    widgets = { 'release_date' : DateTimePicker(options={"format": "YYYY-MM-DD",
+                                       "pickTime": False})} )

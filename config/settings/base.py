@@ -134,6 +134,7 @@ DJANGO_APPS = (
 THIRDPARTY_APPS = (
     'compressor',
     'bootstrapform',
+    'bootstrap3_datetime',
 )
 
 PROJECT_APPS = (
