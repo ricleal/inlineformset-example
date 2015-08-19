@@ -15,6 +15,7 @@ class Author(models.Model):
 class Book(models.Model):
     author = models.ForeignKey(Author)
     title = models.CharField(max_length=100)
+    release_date = models.DateField(blank=True, null=True) # new field
 
     def __unicode__(self):
         return self.title

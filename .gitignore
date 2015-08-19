@@ -4,3 +4,5 @@
 /docs/_build/
 /env
 /htmlcov
+*.pyc
+

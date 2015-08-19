@@ -14,4 +14,4 @@ class BookForm(forms.ModelForm):
         model = Book
         fields = ('author', 'title')
 
-BookFormSet = inlineformset_factory(Author, Book, extra=0, min_num=1, fields=('title', ))
+BookFormSet = inlineformset_factory(Author, Book, extra=0, min_num=1, fields=('title','release_date' ))

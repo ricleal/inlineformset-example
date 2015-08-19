@@ -1,4 +1,4 @@
-django-bootstrap-form>=3.2,<3.3
-django-compressor>=1.5,<1.6
-Django>=1.8.2,<1.9
-https://github.com/sehmaschine/django-grappelli/archive/dev/2.7.x.zip
+django-bootstrap-form>=3.2
+django-compressor>=1.5
+Django>=1.8
+django-grappelli>=2.7

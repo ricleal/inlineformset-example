@@ -58,7 +58,9 @@
     </legend>
     <div class="books form-inline">
         {% for form in formset %}
-            {{ form|bootstrap }}
+            <div class="panel panel-default">
+                <div class="panel-body">{{ form|bootstrap }}</div>
+            </div>
         {% endfor %}
     </div>
   <div class="form-actions">
