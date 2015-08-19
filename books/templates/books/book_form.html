@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block base_content %}
+
+<ul class="breadcrumb">
+  <li><a href="{% url 'book_list' %}">Books</a> <span class="divider">/</span></li>
+  <li class="active">{{ object.title }}</li>
+</ul>
+
+<form action="" method="post">{% csrf_token %}
+    <table class="table">
+    {{ form.as_table }}
+    </table>
+    <a href="{% url 'book_list' %}" class="btn btn-default" role="button">Cancel</a>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+</form>
+
+{% block bottom_script %}{{ block.super }}
+    {# For DateTimePicker#}
+    {{ form.media }}
+{% endblock bottom_script %}
+
+{% endblock base_content %}

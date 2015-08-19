@@ -9,11 +9,10 @@
   <li class="active">{{ object.title }}</li>
 </ul>
 
-<div class="page-header">
-    <a class="btn btn-primary pull-right" href="{% url 'edit_author_and_books' object.author.pk %}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
-    <h1>{{ object.title }}</h1>
-</div>
-
-<p>By {{ object.author }}</p>
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <a href="{% url 'book_list' %}" class="btn btn-default" role="button">Cancel</a>
+    <button type="submit" class="btn btn-danger" value="Confirm">Delete</button>
+</form>
 
 {% endblock base_content %}

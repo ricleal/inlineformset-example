@@ -1,7 +1,9 @@
-from django.views.generic import CreateView, ListView, DetailView, UpdateView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView, FormView
+from django.views.generic.edit import ModelFormMixin
 from django.shortcuts import redirect
+from django.core.urlresolvers import reverse_lazy
 from .models import Book, Author
-from .forms import AuthorForm, BookFormSet
+from .forms import AuthorForm, BookFormSet, BookForm
 
 
 class FormsetMixin(object):
@@ -71,14 +73,18 @@ class AuthorUpdateView(FormsetMixin, UpdateView):
 
 
 class BookList(ListView):
-
     model = Book
-
 
 class BookDetail(DetailView):
-
     model = Book
 
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy('book_list')
+
+class BookUpdate(UpdateView):
+    model = Book
+    form_class = BookForm
 
 class AuthorList(ListView):
 
