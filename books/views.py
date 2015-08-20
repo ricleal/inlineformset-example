@@ -63,14 +63,12 @@ class AuthorCreateView(FormsetMixin, CreateView):
     form_class = AuthorForm
     formset_class = BookFormSet
 
-
 class AuthorUpdateView(FormsetMixin, UpdateView):
     template_name = 'books/author_and_books_form.html'
     is_update_view = True
     model = Author
     form_class = AuthorForm
     formset_class = BookFormSet
-
 
 class BookList(ListView):
     model = Book

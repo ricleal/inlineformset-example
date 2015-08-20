@@ -133,8 +133,10 @@ DJANGO_APPS = (
 
 THIRDPARTY_APPS = (
     'compressor',
-    'bootstrapform',
+    #'bootstrapform',
+    'crispy_forms',
     'bootstrap3_datetime',
+    'djangoformsetjs',
 )
 
 PROJECT_APPS = (
@@ -184,6 +186,9 @@ COMPRESS_OUTPUT_DIR = 'cache'
 # django-grappelli settings
 GRAPPELLI_ADMIN_HEADLINE = '%s Administration' % SITE_NAME
 GRAPPELLI_ADMIN_TITLE = '%s Administration' % SITE_NAME
+
+#Django crispy forms settings:
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Test settings
 if 'test' in sys.argv:
